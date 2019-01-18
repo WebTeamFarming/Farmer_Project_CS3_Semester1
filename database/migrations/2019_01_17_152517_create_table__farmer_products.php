@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableFarmerProduct extends Migration
+class CreateTableFarmerProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableFarmerProduct extends Migration
      */
     public function up()
     {
-        Schema::create('farmer_product', function (Blueprint $table) {
+        Schema::create('farmer_products', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_Unicode_ci';
@@ -21,8 +21,8 @@ class CreateTableFarmerProduct extends Migration
             $table->string('title');
             $table->double('price');
             $table->longtext('description');
-            $table->integer('fpc_id');
-            $table->integer('farmer_id');
+            $table->integer('fpc_id')->unsigned();
+            $table->integer('farmer_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateTableFarmerProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer_product');
+        Schema::dropIfExists('farmer_products');
     }
 }

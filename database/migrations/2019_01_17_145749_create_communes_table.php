@@ -19,7 +19,7 @@ class CreateCommunesTable extends Migration
             $table->charset = 'utf8';
             $table->increments('c_id');
             $table->string('commune');
-            $table->integer('d_id');
+            $table->integer('d_id')->unsigned();
             $table->timestamps();
         });
     }

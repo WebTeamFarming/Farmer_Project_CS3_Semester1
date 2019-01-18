@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFarmerTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateFarmerTable extends Migration
      */
     public function up()
     {
-        Schema::create('farmer', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->charset='utf8';
             $table->collation='utf8_Unicode_ci';
-            $table->increments('farmer_id');
-            $table->string('name');
-            $table->string('phone');
-            $table->enum('gender',['Male','Female']);
-            $table->longText('additional_description');
-            $table->date('date_created');
-            $table->integer('v_id');
-            $table->integer('photo_id');
+            $table->increments('post_id');
+            $table->longText('text');
+            $table->date('date_posted');
+            $table->integer('farmer_id')->unsigned();
+            $table->integer('com_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -36,6 +33,6 @@ class CreateFarmerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer');
+        Schema::dropIfExists('posts');
     }
 }

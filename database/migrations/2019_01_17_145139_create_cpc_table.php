@@ -30,6 +30,6 @@ class CreateCpcTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CompanyProductCategories');
+        Schema::dropIfExists('Company_Product_Categories');
     }
 }

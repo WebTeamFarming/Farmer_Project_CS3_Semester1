@@ -20,10 +20,10 @@ class CreateCommentsTable extends Migration
             $table->increments('cmt_id');
             $table->longText('text');
             $table->date('date');
-            $table->integer('post_id');
-            $table->integer('com_id');
-            $table->integer('farmer_cmt_id');
-            $table->integer('com_cmt_id');
+            $table->integer('post_id')->unsigned();
+            $table->integer('com_id')->unsigned();
+            $table->integer('farmer_cmt_id')->unsigned();
+            $table->integer('com_cmt_id')->unsigned();
             $table->timestamps();
         });
     }

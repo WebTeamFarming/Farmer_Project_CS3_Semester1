@@ -18,8 +18,8 @@ class CreateTableComCmt extends Migration
             $table->charset = 'utf8';
             $table->collation = 'utf8_Unicode_ci';
             $table->increments('com_cmt_id');
-            $table->integer('com_id');
-            $table->integer('cmt_id');
+            $table->integer('com_id')->unsigned();
+            $table->integer('cmt_id')->unsigned();
             $table->timestamps();
         });
     }

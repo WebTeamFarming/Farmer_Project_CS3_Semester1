@@ -18,8 +18,8 @@ class CreateFarmerPostTable extends Migration
             $table->charset='utf8';
             $table->collation='utf8_Unicode_ci';
             $table->increments('farmer_post_id');
-            $table->integer('farmer_id');
-            $table->integer('post_id');
+            $table->integer('farmer_id')->unsigned();
+            $table->integer('post_id')->unsigned();
             $table->date('like_date');
             $table->timestamps();
         });

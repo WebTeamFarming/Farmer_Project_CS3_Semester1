@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTable extends Migration
+class CreateCompanyPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('company_post', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->charset='utf8';
             $table->collation='utf8_Unicode_ci';
-            $table->increments('post_id');
-            $table->longText('text');
-            $table->date('date_posted');
-            $table->integer('farmer_id');
-            $table->integer('com_id');
+            $table->increments('like_id');
+            $table->integer('com_id')->unsigned();
+            $table->integer('post_id')->unsigned();
+            $table->date('like_date');
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreatePostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('company_post');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictTable extends Migration
+class CreateDistrictsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDistrictTable extends Migration
      */
     public function up()
     {
-        Schema::create('Districts', function (Blueprint $table) {
+        Schema::create('districts', function (Blueprint $table) {
             $table->collation = 'utf8_unicode_ci';
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->increments('d_id');
             $table->string('district');
-            $table->integer('p_id');
+            $table->integer('p_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateDistrictTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Districts');
+        Schema::dropIfExists('districts');
     }
 }
