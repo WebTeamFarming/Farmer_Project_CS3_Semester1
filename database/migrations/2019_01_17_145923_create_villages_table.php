@@ -19,7 +19,7 @@ class CreateVillagesTable extends Migration
             $table->charset = 'utf8';
             $table->increments('v_id');
             $table->string('village');
-            $table->integer('c_id');
+            $table->integer('c_id')->unsigned();
             $table->timestamps();
         });
     }

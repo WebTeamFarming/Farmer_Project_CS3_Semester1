@@ -19,9 +19,9 @@ class CreatePhotosTable extends Migration
             $table->charset = 'utf8';
             $table->increments('photo_id');
             $table->string('photo_path');
-            $table->integer('fp_id');
-            $table->integer('cp_id');
-            $table->integer('post_id');
+            $table->integer('fp_id')->unsigned();
+            $table->integer('cp_id')->unsigned();
+            $table->integer('post_id')->unsigned();
             $table->timestamps();
         });
     }

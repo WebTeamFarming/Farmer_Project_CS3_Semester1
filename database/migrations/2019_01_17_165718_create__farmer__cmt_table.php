@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableComCmt extends Migration
+class CreateFarmerCmtTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateTableComCmt extends Migration
      */
     public function up()
     {
-        Schema::create('com_cmt', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_Unicode_ci';
-            $table->increments('com_cmt_id');
-            $table->integer('com_id')->unsigned();
+        Schema::create('farmer_cmt', function (Blueprint $table) {
+            $table->engine='InnoDB';
+            $table->charset='utf8';
+            $table->collation='utf8_Unicode_ci';
+            $table->increments('farmer_cmt_id');
+            $table->integer('farmer_id')->unsigned();
             $table->integer('cmt_id')->unsigned();
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateTableComCmt extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('com_cmt');
+        Schema::dropIfExists('farmer_cmt');
     }
 }
