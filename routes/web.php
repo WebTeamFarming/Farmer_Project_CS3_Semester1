@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/category/create',function(){
+
+});
+Route::get('/category/create',function(){
+
+});
+
+Route::get('/test/{id}/','Test\TestController@routetesting');
+
+Route::resource 
