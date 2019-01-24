@@ -19,6 +19,7 @@ class CreateTableAdmins extends Migration
             $table->collation = 'utf8_Unicode_ci';
             $table->increments('admin_id');
             $table->string('name');
+            $table->string('gender');
             $table->string('phone');
             $table->string('email');
             $table->date('date_created');
