@@ -12,16 +12,12 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
+
     return view('welcome');
 });
 
-Route::get('/test_inherit/child', function(){
-    return view('test inherit/child');
-});
 
-Route::get('/test_inherit/master', function(){
-    return view('test inherit/master');
-});
+Route::get('/home',[
 
-Route::get('/getMigration', 'Test\SelectData@index');
+    'uses' => 'HomeController@index'
+]);

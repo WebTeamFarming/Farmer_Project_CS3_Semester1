@@ -20,6 +20,7 @@ class CreateTableFarmerProductCatagories extends Migration
             $table->increments('fpc_id');
             $table->string('catagory');
             $table->timestamps();
+
         });
     }
 
