@@ -17,9 +17,9 @@ class CreateFarmerCmtTable extends Migration
             $table->engine='InnoDB';
             $table->charset='utf8';
             $table->collation='utf8_Unicode_ci';
-            $table->increments('fartmer_cmt_id');
-            $table->integer('farmer_id');
-            $table->integer('cmt_id');
+            $table->increments('farmer_cmt_id');
+            $table->integer('farmer_id')->unsigned();
+            $table->integer('cmt_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -31,6 +31,9 @@ class CreateFarmerCmtTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::dropIfExists('farmer_cmt');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
     }
 }

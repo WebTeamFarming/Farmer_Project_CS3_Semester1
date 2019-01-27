@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFarmerTable extends Migration
+class CreateFarmersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFarmerTable extends Migration
      */
     public function up()
     {
-        Schema::create('farmer', function (Blueprint $table) {
+        Schema::create('farmers', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->charset='utf8';
             $table->collation='utf8_Unicode_ci';
@@ -23,8 +23,8 @@ class CreateFarmerTable extends Migration
             $table->enum('gender',['Male','Female']);
             $table->longText('additional_description');
             $table->date('date_created');
-            $table->integer('v_id');
-            $table->integer('photo_id');
+            $table->integer('v_id')->unsigned();
+            $table->integer('photo_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -36,6 +36,8 @@ class CreateFarmerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('farmers');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

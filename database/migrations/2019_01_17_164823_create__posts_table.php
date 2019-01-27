@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,8 +20,8 @@ class CreatePostTable extends Migration
             $table->increments('post_id');
             $table->longText('text');
             $table->date('date_posted');
-            $table->integer('farmer_id');
-            $table->integer('com_id');
+            $table->integer('farmer_id')->unsigned();
+            $table->integer('com_id')->unsigned();
             $table->timestamps();
         });
     }

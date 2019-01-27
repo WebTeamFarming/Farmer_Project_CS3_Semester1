@@ -12,8 +12,28 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
-Route::get('/templete', function(){
-    return view('templete');
+
+
+Route::get('/home',[
+
+    'uses' => 'HomeController@index'
+]);
+Route::get('/toolstore',['uses' => 'ToolStore@index']);
+
+Route::get('/editeprofilefarmer',['uses' => 'EditeFarmerProfile@index']);
+Route::get('edite',function(){
+    return view('layouts.editefarmerprofile');
 });
+Route::get('/editeadmin',function(){
+    return view('layouts.adminedite');
+});
+Route::get('/company',function(){
+    return view('layouts.companyprofile');
+});
+Route::get('/master',function(){
+    return view('layouts.master');
+});
+

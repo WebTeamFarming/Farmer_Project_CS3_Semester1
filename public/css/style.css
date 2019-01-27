@@ -1,0 +1,9 @@
+/* style for button details */
+div.card{
+		text-align: center;
+        }
+        /* style for button in company profile */
+ div.col{
+			text-align: center;
+			border-radius: 10px;
+		}
