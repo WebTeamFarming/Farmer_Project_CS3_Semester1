@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class AddOneMoreConstraintToFarmerProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
+
+        Schema::table('farmer_products', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_Unicode_ci';
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            //$table->integer('fpc_id')->unsigned();
+            $table->foreign('fpc_id')
+            ->references('fpc_id')
+            ->on('farmer_product_categories');
         });
     }
 
@@ -30,6 +30,8 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::table('farmer_products', function (Blueprint $table) {
+            //
+        });
     }
 }

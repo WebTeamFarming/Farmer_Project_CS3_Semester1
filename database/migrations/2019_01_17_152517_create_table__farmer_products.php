@@ -21,7 +21,6 @@ class CreateTableFarmerProducts extends Migration
             $table->string('title');
             $table->double('price');
             $table->longtext('description');
-            $table->integer('fpc_id')->unsigned();
             $table->integer('farmer_id')->unsigned();
             $table->timestamps();
         });
