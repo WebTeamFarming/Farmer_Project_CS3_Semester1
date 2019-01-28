@@ -14,9 +14,6 @@ class CreateVillagesTable extends Migration
     public function up()
     {
         Schema::create('Villages', function (Blueprint $table) {
-            $table->collation = 'utf8_unicode_ci';
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
             $table->increments('v_id');
             $table->string('village');
             $table->integer('c_id')->unsigned();

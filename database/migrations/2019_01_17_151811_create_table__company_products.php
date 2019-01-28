@@ -14,9 +14,6 @@ class CreateTableCompanyProducts extends Migration
     public function up()
     {
         Schema::create('company_products', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_Unicode_ci';
             $table->increments('cp_id');
             $table->string('title');
             $table->double('price');

@@ -14,9 +14,6 @@ class CreateCpcTable extends Migration
     public function up()
     {
         Schema::create('Company_Product_Categories', function (Blueprint $table) {
-            $table->collation = 'utf8_unicode_ci';
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
             $table->increments('cpc_id');
             $table->string('name');
             $table->timestamps();

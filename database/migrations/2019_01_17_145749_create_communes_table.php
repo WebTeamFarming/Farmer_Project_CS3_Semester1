@@ -14,9 +14,6 @@ class CreateCommunesTable extends Migration
     public function up()
     {
         Schema::create('Communes', function (Blueprint $table) {
-            $table->collation = 'utf8_unicode_ci';
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
             $table->increments('c_id');
             $table->string('commune');
             $table->integer('d_id')->unsigned();

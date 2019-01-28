@@ -14,9 +14,6 @@ class CreateTableFarmerProductCatagories extends Migration
     public function up()
     {
         Schema::create('farmer_product_catagories', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_Unicode_ci';
             $table->increments('fpc_id');
             $table->string('catagory');
             $table->timestamps();
