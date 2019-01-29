@@ -13,7 +13,7 @@ class CreateCommunesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Communes', function (Blueprint $table) {
+        Schema::create('communes', function (Blueprint $table) {
             $table->increments('c_id');
             $table->string('commune');
             $table->integer('d_id')->unsigned();
@@ -28,6 +28,6 @@ class CreateCommunesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Communes');
+        Schema::dropIfExists('communes');
     }
 }

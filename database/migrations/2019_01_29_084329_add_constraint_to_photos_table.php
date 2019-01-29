@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableFarmerProductCatagories extends Migration
+class AddConstraintToPhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTableFarmerProductCatagories extends Migration
      */
     public function up()
     {
-        Schema::create('farmer_product_catagories', function (Blueprint $table) {
-            $table->increments('fpc_id');
-            $table->string('catagory');
-            $table->timestamps();
-
+        Schema::table('photos', function (Blueprint $table) {
+            $table->foreign('article_id')
+            ->references('article_id')
+            ->on('articles');
         });
     }
 
@@ -28,6 +27,8 @@ class CreateTableFarmerProductCatagories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('farmer_product_catagories');
+        Schema::table('photos', function (Blueprint $table) {
+            //
+        });
     }
 }

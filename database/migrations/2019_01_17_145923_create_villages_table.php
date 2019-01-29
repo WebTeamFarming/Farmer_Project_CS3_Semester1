@@ -13,7 +13,7 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Villages', function (Blueprint $table) {
+        Schema::create('villages', function (Blueprint $table) {
             $table->increments('v_id');
             $table->string('village');
             $table->integer('c_id')->unsigned();
@@ -28,6 +28,6 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Villages');
+        Schema::dropIfExists('villages');
     }
 }
