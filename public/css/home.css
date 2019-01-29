@@ -1,0 +1,26 @@
+#navbar{
+
+    margin-left: 100px;
+}
+
+
+#btn-login,#btn-register{
+
+    text-decoration: none;
+}
+
+
+#form-login{
+
+    margin-top : 100px;
+    margin-bottom : 50px;
+}
+
+
+#form-register{
+
+    margin-top : 100px;
+    margin-bottom : 50px;
+}
+
+
