@@ -14,14 +14,6 @@ class AddConstraintsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('v_id')
-            ->references('v_id')
-            ->on('villages');
-
-            $table->foreign('photo_id')
-            ->references('photo_id')
-            ->on('photos');
-
             $table->foreign('user_type_id')
             ->references('user_type_id')
             ->on('user_types');
