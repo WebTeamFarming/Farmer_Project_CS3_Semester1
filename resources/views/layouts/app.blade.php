@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -79,21 +78,3 @@
     </div>
 </body>
 </html>
-=======
-<!-- Stored in resources/views/layouts/app.blade.php -->
-
-<html>
-    <head>
-        <title>Test - @yield('title')</title>
-    </head>
-    <body>
-        @section('sidebar')
-            This is the master sidebar.
-        @show
-
-        <div class="container">
-            @yield('content')
-        </div>
-    </body>
-</html>
->>>>>>> a3cf3b89c23f963ce45ea90024a337ad06b41203
