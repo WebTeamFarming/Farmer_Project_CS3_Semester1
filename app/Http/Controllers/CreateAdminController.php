@@ -59,7 +59,7 @@ class CreateAdminController extends Controller
     }
 
     public function write_db(){
-        return "Hello";
+        return "Hello world";
     }
 
 
