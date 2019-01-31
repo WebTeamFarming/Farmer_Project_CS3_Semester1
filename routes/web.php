@@ -32,3 +32,11 @@ Route::get('/home/farmer_store',[
     'uses' => 'Farmer_Store\StoreController@index',
     'as' => 'home.farmer_store'
 ]);
+
+Route::get('/create_admin', [
+    'uses' => 'CreateAdminController@load_form'
+]);
+
+Route::get('blade', function () {
+    return view('child');
+});
