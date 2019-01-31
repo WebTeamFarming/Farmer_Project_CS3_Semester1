@@ -19,9 +19,16 @@ Route::get('/', function () {
 
 Route::get('/home',[
 
-    'uses' => 'HomeController@index'
+    'uses' => 'Home\HomeController@index'
 ]);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/home/farmer_store',[
+
+    'uses' => 'Farmer_Store\StoreController@index',
+    'as' => 'home.farmer_store'
+]);
