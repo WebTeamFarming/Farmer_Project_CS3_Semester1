@@ -21,3 +21,11 @@ Route::get('/home',[
 
     'uses' => 'HomeController@index'
 ]);
+
+Route::get('/create_admin', [
+    'uses' => 'CreateAdminController@load_form'
+]);
+
+Route::get('blade', function () {
+    return view('child');
+});
