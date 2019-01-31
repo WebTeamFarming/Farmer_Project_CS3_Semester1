@@ -29,3 +29,13 @@ Route::get('/create_admin', [
 Route::get('blade', function () {
     return view('child');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/write_db',[
+
+    'uses' => 'CreateAdminController@write_db',
+    'as' => 'insert_data'
+
+]);
