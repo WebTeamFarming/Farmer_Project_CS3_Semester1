@@ -44,11 +44,11 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Home</a>
+                        <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#">Farmer Store</a>
+                        <a class="nav-link text-white" href="{{ route('home.farmer_store') }}">Farmer Store</a>
                     </li>
 
                     <li class="nav-item">

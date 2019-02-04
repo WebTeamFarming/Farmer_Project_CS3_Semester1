@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Route::get('/home',[
 
-    'uses' => 'Home\HomeController@index'
+    'uses' => 'Home\HomeController@index',
+    'as' => 'home'
 ]);
 
 Auth::routes();
@@ -47,4 +48,14 @@ Route::post('/write_db',[
     'uses' => 'CreateAdminController@write_db',
     'as' => 'insert_data'
 
+]);
+
+
+Route::resource('farmerpost', 'FarmerPost\PostController');
+
+
+Route::post('/create/user',[
+
+    'uses' => 'User\UserController@store',
+    'as' => 'user.create'
 ]);
