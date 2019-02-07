@@ -1,0 +1,38 @@
+body{
+    margin:0px;
+}
+
+
+#navbar{
+
+    margin-left: 100px;
+}
+
+
+#btn-login,#btn-register{
+
+    text-decoration: none;
+}
+
+
+#form-login{
+
+    margin-top : 90px;
+    margin-bottom : 50px;
+}
+
+
+#form-register{
+
+    margin-top : 90px;
+    margin-bottom : 50px;
+}
+
+
+#farmer-store{
+
+    margin-top : 90px;
+    margin-bottom : 50px;
+}
+
+
