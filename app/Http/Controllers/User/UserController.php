@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
+use App\ModelUser\User;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,7 +24,9 @@ class UserController extends Controller
 
         $user->password = $request->password;
 
-        $user->name = $request->name;
+        $user->user_type = $request->role;
+
+        return redirect()->route('home');
 
     }
 }

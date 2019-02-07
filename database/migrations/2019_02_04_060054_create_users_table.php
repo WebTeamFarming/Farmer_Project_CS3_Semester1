@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->String('name');
             $table->String('phone');
             $table->String('email')->nullable();
-            $table->bcrypt('password');
-            $table->unsignedInteger('user_type_id');
+            $table->String('password');
+            $table->unsignedInteger('user_type_id')->foreign('user_type_id')->references('id')->on('user_types');
             $table->timestamps();
         });
     }

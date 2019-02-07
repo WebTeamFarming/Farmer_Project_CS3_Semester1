@@ -15,7 +15,7 @@ class CreateUserTypesTable extends Migration
     {
         Schema::create('user_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('role',['Farmer','Company']);
+            $table->enum('user_type',['Farmer','Company']);
             $table->timestamps();
         });
     }
