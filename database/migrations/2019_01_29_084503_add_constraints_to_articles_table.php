@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddConstraintsToFarmerProductsTable extends Migration
+class AddConstraintsToArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class AddConstraintsToFarmerProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('farmer_products', function (Blueprint $table) {
-            $table->foreign('farmer_id')
-            ->references('farmer_id')
-            ->on('farmers')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+        Schema::table('articles', function (Blueprint $table) {
+            $table->foreign('category_id')
+            ->references('category_id')
+            ->on('categories');
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
         });
     }
 
@@ -29,7 +31,7 @@ class AddConstraintsToFarmerProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('farmer_products', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             //
         });
     }

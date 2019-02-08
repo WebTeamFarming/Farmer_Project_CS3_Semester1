@@ -13,10 +13,7 @@ class CreateProvincesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Provinces', function (Blueprint $table) {
-            $table->collation = 'utf8_unicode_ci';
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
+        Schema::create('provinces', function (Blueprint $table) {
             $table->increments('p_id');
             $table->string('province');
             $table->timestamps();
@@ -30,6 +27,6 @@ class CreateProvincesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Provinces');
+        Schema::dropIfExists('provinces');
     }
 }

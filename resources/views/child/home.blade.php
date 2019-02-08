@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('parent.master')
 
 @section('title','Home Page')
 
@@ -203,6 +203,4 @@
 @endsection
 
 
-@section('footer')
-    @parent
-@endsection
+

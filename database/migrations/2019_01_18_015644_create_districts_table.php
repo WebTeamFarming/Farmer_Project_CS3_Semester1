@@ -14,10 +14,7 @@ class CreateDistrictsTable extends Migration
     public function up()
     {
         Schema::create('districts', function (Blueprint $table) {
-            $table->collation = 'utf8_unicode_ci';
-            $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->increments('d_id');
+            $table->increments('d_id')->unsigned();
             $table->string('district');
             $table->integer('p_id')->unsigned();
             $table->timestamps();

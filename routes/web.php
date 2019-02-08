@@ -19,21 +19,24 @@ Route::get('/', function () {
 
 Route::get('/home',[
 
-    'uses' => 'HomeController@index'
+    'uses' => 'Home\HomeController@index',
+    'as' => 'home'
 ]);
-Route::get('/toolstore',['uses' => 'ToolStore@index']);
 
-Route::get('/editeprofilefarmer',['uses' => 'EditeFarmerProfile@index']);
-Route::get('edite',function(){
-    return view('layouts.editefarmerprofile');
-});
-Route::get('/editeadmin',function(){
-    return view('layouts.adminedite');
-});
-Route::get('/company',function(){
-    return view('layouts.companyprofile');
-});
-Route::get('/master',function(){
-    return view('layouts.master');
-});
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/home/farmer_store',[
+
+    'uses' => 'FarmerStore\FarmerStoreController@index',
+    'as' => 'home.farmer_store'
+]);
+
+
+Auth::routes();
+
+
+
 

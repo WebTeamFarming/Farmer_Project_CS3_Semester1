@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddConstraintToDistrictsTable extends Migration
+class AddConstraintsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AddConstraintToDistrictsTable extends Migration
      */
     public function up()
     {
-        Schema::table('districts', function (Blueprint $table) {
-            $table->foreign('p_id')
-            ->references('p_id')
-            ->on('provinces')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('user_type_id')
+            ->references('user_type_id')
+            ->on('user_types');
         });
     }
 
@@ -29,7 +27,7 @@ class AddConstraintToDistrictsTable extends Migration
      */
     public function down()
     {
-        Schema::table('districts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

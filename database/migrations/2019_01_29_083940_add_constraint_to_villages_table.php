@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddConstraintToCommunesTable extends Migration
+class AddConstraintToVillagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AddConstraintToCommunesTable extends Migration
      */
     public function up()
     {
-        Schema::table('communes', function (Blueprint $table) {
-            $table->foreign('d_id')
-            ->references('d_id')
-            ->on('districts')
-            ->onDelete('restrict')
-            ->onUpdate('cascade');
+        Schema::table('villages', function (Blueprint $table) {
+            $table->foreign('c_id')
+            ->references('c_id')
+            ->on('communes');
         });
     }
 
@@ -29,7 +27,7 @@ class AddConstraintToCommunesTable extends Migration
      */
     public function down()
     {
-        Schema::table('communes', function (Blueprint $table) {
+        Schema::table('villages', function (Blueprint $table) {
             //
         });
     }

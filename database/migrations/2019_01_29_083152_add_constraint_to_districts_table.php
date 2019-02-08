@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVillagesTable extends Migration
+class AddConstraintToDistrictsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('villages', function (Blueprint $table) {
-            $table->increments('v_id');
-            $table->string('village');
-            $table->integer('c_id')->unsigned();
-            $table->timestamps();
+        Schema::table('districts', function (Blueprint $table) {
+            $table->foreign('p_id')
+            ->references('p_id')
+            ->on('provinces');
         });
     }
 
@@ -28,6 +27,8 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('villages');
+        Schema::table('districts', function (Blueprint $table) {
+            //
+        });
     }
 }

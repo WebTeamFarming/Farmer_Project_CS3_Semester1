@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVillagesTable extends Migration
+class CreateTableUserTypes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('villages', function (Blueprint $table) {
-            $table->increments('v_id');
-            $table->string('village');
-            $table->integer('c_id')->unsigned();
+        Schema::create('user_types', function (Blueprint $table) {
+            $table->increments('user_type_id')->unsigned;
+            $table->string('user_type');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('villages');
+        Schema::dropIfExists('user_types');
     }
 }
