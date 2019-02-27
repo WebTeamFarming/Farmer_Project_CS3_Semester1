@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home/homepage';
 
     /**
      * Create a new controller instance.
@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'phone' => ['min:9','required','string'],
         ]);
     }
 
@@ -63,9 +64,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $role = $data['user_role'];
+
+        if ($role == 'Farmer'){
+
+            $role = 1;
+        }else{
+
+            $role = 2;
+        }
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'user_type_id' => $role,
             'password' => Hash::make($data['password']),
         ]);
     }
